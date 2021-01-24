@@ -19,7 +19,7 @@ public class Genre {
     @Size(min = 1,max=15, message = "genre name should be between 1 and 15 characters")
     private String name;
 
-    @OneToMany(mappedBy = "genres", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "genre", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Music> musicArray;
 
     public Genre( String name) {
