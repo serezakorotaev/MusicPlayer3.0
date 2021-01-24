@@ -7,20 +7,24 @@ import ru.Korotaev.SpringApp.Models.Music;
 import java.util.List;
 
 public class GenreService {
-     private GenreDAO genreDAO = new GenreDAO();
+    private GenreDAO genreDAO;
 
-     public GenreService(){}
+    public GenreService(){
+        genreDAO = new GenreDAO();
+    }
 
-     public Genre findGenre(int id){
+    public Genre findGenre(int id){
          return genreDAO.findById(id);
      }
 
-     public void saveGenre(Genre genre){
+    public void saveGenre(Genre genre){
          genreDAO.save(genre);
      }
     public void deleteGenre(Genre genre){
         genreDAO.delete(genre);
     }
+
+
     public void updateGenre(Genre genre){
         genreDAO.update(genre);
     }
