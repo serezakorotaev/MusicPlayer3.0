@@ -11,6 +11,8 @@ import java.util.List;
 
 public class GenreDAO {
 
+
+
     public Genre findById(int id){
         return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Genre.class,id);
     }
@@ -30,6 +32,7 @@ public class GenreDAO {
         tx1.commit();
         session.close();
     }
+
     public void delete(Genre genre){
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
